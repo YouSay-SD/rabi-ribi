@@ -77,9 +77,12 @@ const HeroStyled = styled.div`
                 align-items: center;
 
                 .hero__logo-character {
-                    max-width: 700px;
                     z-index: 2;
                     animation: logoCharacterJump 4s infinite ease;
+
+                    &--erina {
+                        max-width: 700px;
+                    }
     
                     &--ribbon {
                         max-width: 400px;
@@ -112,6 +115,68 @@ const HeroStyled = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 991px) {
+        section {
+            .container {
+                .hero__logo-character-container {
+                    .hero__logo-character {
+                        &--erina {
+                            max-width: 500px;
+                        }
+    
+                        &--ribbon {
+                            max-width: 250px;
+                            margin-right: -340px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        section {
+            .container {
+                flex-direction: column;
+
+                .hero__logo-container {
+                    width: 100%;
+                    max-width: initial;
+                    padding: 30px 0;
+                    background-color: initial;
+                }
+
+                .hero__logo-character-container {
+                    justify-content: flex-end;
+
+                    .hero__logo-character {
+                        &--erina {
+                            max-width: 300px;
+                        }
+
+                        &--ribbon {
+                            max-width: 150px;
+                            margin-right: -200px;
+                        }
+                    }
+                }
+            }
+
+            .circle {
+                width: 400px;
+                height: 400px;
+                background-color: white;
+                border: 2px solid #8A56BB;
+
+
+                &--secondary-state {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+    } 
 `
 
 function Hero() {
