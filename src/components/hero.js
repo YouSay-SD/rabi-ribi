@@ -40,9 +40,14 @@ const HeroStyled = styled.div`
 
     section {
         height: 100vh;
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(138,86,187,1) 100%);
+        background-image: url('./img/background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         position: relative;
         overflow: hidden;
+        background-color: rgba(138,86,187,.5);
+        background-blend-mode: soft-light;
 
         .container {
             max-width: 1440px;
@@ -56,11 +61,13 @@ const HeroStyled = styled.div`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                max-width: 550px;
+                background-color: rgba(255,255,255,.9);
+                padding: 0 40px;
         
                 .hero__logo {
-                    width: 100%;
-                    max-width: 580px;
                     animation: logoSize 6s infinite;
+                    width: 100%;
                     z-index: 1;
                 }
             }
@@ -70,12 +77,12 @@ const HeroStyled = styled.div`
                 align-items: center;
 
                 .hero__logo-character {
-                    max-width: 650px;
+                    max-width: 700px;
                     z-index: 2;
                     animation: logoCharacterJump 4s infinite ease;
     
                     &--ribbon {
-                        max-width: 370px;
+                        max-width: 400px;
                         margin-right: -440px;
                         z-index: 3;
                     }
@@ -83,56 +90,25 @@ const HeroStyled = styled.div`
             }
         }
 
-        .hero__circle {
+        .circle {
+            width: 800px;
+            height: 800px;
             background-color: #8A56BB;
+            opacity: .9;
             position: absolute;
+            bottom: -150px;
+            right: -150px;
             border-radius: 50%;
-            opacity: .8;
-            
-            &--primary {
-                width: 700px;
-                height: 700px;
-                right: 0;
-                bottom: 30px;
-            }
+            border: 2px solid white;
+            animation: logoCharacterJump 4s infinite ease;
 
-            &--secondary {
-                width: 300px;
-                height: 300px;
-                left: -100px;
-                top: -130px;
-                opacity: .9;
-            }
-
-            &--terciary {
-                width: 300px;
-                height: 300px;
-                bottom: -40px;
-                left: 12%;
-            }
-
-            &--quarter {
-                width: 350px;
-                height: 350px;
-                top: 0;
-                left: 50%;
-                opacity: .7;
-            }
-
-            &--fifth {
-                width: 150px;
-                height: 150px;
-                bottom: 0;
-                left: 50%;
-                opacity: .7;
-            }
-
-            &--sixth {
-                width: 150px;
-                height: 150px;
-                bottom: 50%;
-                left: 40%;
-                opacity: .5;
+            &--secondary-state {
+                width: 400px;
+                height: 400px;
+                bottom: initial;
+                right: initial;
+                top: -120px;
+                left: -40px;
             }
         }
     }
@@ -157,17 +133,8 @@ function Hero() {
 
                 </div>
 
-                <div className="hero__circle hero__circle--primary"></div>
-
-                <div className="hero__circle hero__circle--secondary"></div>
-
-                <div className="hero__circle hero__circle--terciary"></div>
-
-                <div className="hero__circle hero__circle--quarter"></div>
-
-                <div className="hero__circle hero__circle--fifth"></div>
-
-                <div className="hero__circle hero__circle--sixth"></div>
+                <div className="circle"></div>
+                <div className="circle circle--secondary-state"></div>
 
             </section>
 
