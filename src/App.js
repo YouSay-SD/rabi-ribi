@@ -3,6 +3,7 @@ import Header from './components/header';
 import Hero from './components/hero';
 import Video from './components/video';
 import Welcome from './components/welcome';
+import Footer from './components/footer';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <Video />
 
       <Welcome />
+
+      <Footer />
 
     </>
 
