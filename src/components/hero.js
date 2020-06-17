@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HeroStyled = styled.div`
+const HeroStyled = styled.section`
     @keyframes logoSize {
         0% { transform: scale(1); }
 
@@ -20,6 +20,11 @@ const HeroStyled = styled.div`
         50% { transform: translateY(-20px); }
 
         100% { transform: translateY(0); }
+    }
+
+    @keyframes characterEntry {
+        0% { transform: translateX(1200px) }
+        100% { transform: translateX(0) }
     }
 
     section {
@@ -46,7 +51,7 @@ const HeroStyled = styled.div`
                 justify-content: center;
                 align-items: center;
                 max-width: 550px;
-                background-color: rgba(255,255,255,.9);
+                background-color: white;
                 padding: 0 40px;
         
                 .hero__logo {
@@ -56,22 +61,30 @@ const HeroStyled = styled.div`
                 }
             }
 
-            .hero__logo-character-container {
+            .hero__character-container {
                 display: flex;
                 align-items: center;
 
-                .hero__logo-character {
+                .hero__primary-character-container {
                     z-index: 2;
-                    animation: logoCharacterJump 4s infinite ease;
-
-                    &--erina {
-                        max-width: 700px;
+                    max-width: 700px;
+                    animation: characterEntry 1s ease;
+                    
+                    .hero__primary-character {
+                        animation: logoCharacterJump 4s infinite ease;
+                        width: 100%;
                     }
-    
-                    &--ribbon {
-                        max-width: 400px;
-                        margin-right: -440px;
-                        z-index: 3;
+                }
+
+                .hero__secondary-character-container {
+                    max-width: 400px;
+                    margin-right: -470px;
+                    z-index: 3;
+                    animation: characterEntry 0.7s ease;
+                    
+                    .hero__secondary-character {
+                        animation: logoCharacterJump 4s infinite ease;
+                        width: 100%;
                     }
                 }
             }
@@ -103,17 +116,25 @@ const HeroStyled = styled.div`
     @media screen and (max-width: 991px) {
         section {
             .container {
-                .hero__logo-character-container {
-                    .hero__logo-character {
-                        &--erina {
-                            max-width: 500px;
-                        }
-    
-                        &--ribbon {
-                            max-width: 250px;
-                            margin-right: -340px;
-                        }
+                .hero__character-container {              
+                    .hero__primary-character-container {
+                        max-width: 500px;
                     }
+
+                    .hero__secondary-character-container {
+                        max-width: 250px;
+                        margin-right: -260px;
+                    }
+                }
+            }
+
+            .circle {
+                width: 600px;
+                height: 600px;
+
+                &--secondary-state {
+                    width: 400px;
+                    height: 400px;
                 }
             }
         }
@@ -131,18 +152,16 @@ const HeroStyled = styled.div`
                     background-color: initial;
                 }
 
-                .hero__logo-character-container {
+                .hero__character-container {
                     justify-content: flex-end;
 
-                    .hero__logo-character {
-                        &--erina {
-                            max-width: 300px;
-                        }
+                    .hero__primary-character-container {
+                        max-width: 300px;
+                    }
 
-                        &--ribbon {
-                            max-width: 150px;
-                            margin-right: -200px;
-                        }
+                    .hero__secondary-character-container {
+                        max-width: 150px;
+                        margin-right: -200px;
                     }
                 }
             }
@@ -172,12 +191,25 @@ function Hero() {
                 <div className="container">
 
                     <div className="hero__logo-container">
+
                         <img className="hero__logo" src="./img/logo2.png" alt="Logo" />
+
                     </div>
 
-                    <div className="hero__logo-character-container">
-                        <img className="hero__logo-character hero__logo-character--ribbon" src="./img/ribbon.png" alt="Ribbon" />
-                        <img className="hero__logo-character hero__logo-character--erina" src="./img/erina.png" alt="Erina" />
+                    <div className="hero__character-container">
+
+                        <div className="hero__secondary-character-container">
+
+                            <img className="hero__secondary-character" src="./img/ribbon.png" alt="Ribbon" />
+
+                        </div>
+
+                        <div className="hero__primary-character-container">
+
+                            <img className="hero__primary-character" src="./img/erina.png" alt="Erina" />
+
+                        </div>
+
                     </div>
 
                 </div>
