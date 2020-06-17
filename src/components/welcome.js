@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WelcomeStyled = styled.section`
-    background-color: white;
+    background-color: #262626;
     padding: 80px 0;
 
     .container {
