@@ -61,12 +61,12 @@ function Header() {
 
                 <ul>
 
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Game Data</a></li>
-                    <li><a href="#">Maps</a></li>
-                    <li><a href="#">Achievements</a></li>
-                    <li><a href="#">Minigames</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="www.google.com">News</a></li>
+                    <li><a href="www.google.com">Game Data</a></li>
+                    <li><a href="www.google.com">Maps</a></li>
+                    <li><a href="www.google.com">Achievements</a></li>
+                    <li><a href="www.google.com">Minigames</a></li>
+                    <li><a href="www.google.com">About</a></li>
 
                 </ul>
 

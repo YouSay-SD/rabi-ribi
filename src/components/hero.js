@@ -200,13 +200,13 @@ function Hero() {
 
                         <div className="hero__secondary-character-container">
 
-                            <img className="hero__secondary-character" src="./img/ribbon.png" alt="Ribbon" />
+                            <img className="hero__secondary-character" src="./img/ribbon.png" alt="Ribbon" title="Ribbon" />
 
                         </div>
 
                         <div className="hero__primary-character-container">
 
-                            <img className="hero__primary-character" src="./img/erina.png" alt="Erina" />
+                            <img className="hero__primary-character" src="./img/erina.png" alt="Erina" title="Erina" />
 
                         </div>
 

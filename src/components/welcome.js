@@ -13,7 +13,7 @@ const WelcomeStyled = styled.section`
         .welcome__title {
             font-size: 65px;
             font-family: 'Comic Neue';
-            color: #8A56BB;
+            color: #e85198;
             font-weight: bold;
             text-align: center;
             -webkit-text-fill-color: transparent;
