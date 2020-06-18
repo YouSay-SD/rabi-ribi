@@ -1,33 +1,33 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-const HeroStyled = styled.section`
-    @keyframes logoSize {
-        0% { transform: scale(1); }
+const logoSize = keyframes`
+    0% { transform: scale(1); }
 
-        25% { transform: scale(1.1); }
+    25% { transform: scale(1.1); }
 
-        50% { transform: scale(1); }
+    50% { transform: scale(1); }
 
-        75% { transform: scale(1.05); }
+    75% { transform: scale(1.05); }
 
-        100% { transform: scale(1); }
-    }
+    100% { transform: scale(1); }
+`;
 
-    @keyframes logoCharacterJump {
-        0% { transform: translateY(0); }
+const logoCharacterJump = keyframes`
+    0% { transform: translateY(0); }
 
-        50% { transform: translateY(-20px); }
+    50% { transform: translateY(-20px); }
 
-        100% { transform: translateY(0); }
-    }
+    100% { transform: translateY(0); }
+`;
 
-    @keyframes characterEntry {
-        0% { transform: translateX(1200px) }
-        100% { transform: translateX(0) }
-    }
+const characterEntry = keyframes`
+    0% { transform: translateX(1200px) }
 
-    
+    100% { transform: translateX(0) }
+`;
+
+const HeroStyled = styled.section`    
     height: 100vh;
     background-image: url('./img/background.png');
     background-size: cover;
@@ -50,7 +50,7 @@ const HeroStyled = styled.section`
             padding: 0 40px;
     
             .hero__logo {
-                animation: logoSize 6s infinite;
+                animation: ${ logoSize } 6s infinite;
                 width: 100%;
                 z-index: 1;
             }
@@ -60,10 +60,10 @@ const HeroStyled = styled.section`
             .hero__primary-character-container {
                 z-index: 2;
                 max-width: 700px;
-                animation: characterEntry 1s ease;
+                animation: ${ characterEntry } 1s ease;
                 
                 .hero__primary-character {
-                    animation: logoCharacterJump 4s infinite ease;
+                    animation: ${ logoCharacterJump } 4s infinite ease;
                     width: 100%;
                 }
             }
@@ -72,10 +72,10 @@ const HeroStyled = styled.section`
                 max-width: 400px;
                 margin-right: -470px;
                 z-index: 3;
-                animation: characterEntry 0.7s ease;
+                animation: ${ characterEntry } 0.7s ease;
                 
                 .hero__secondary-character {
-                    animation: logoCharacterJump 4s infinite ease;
+                    animation: ${ logoCharacterJump } 4s infinite ease;
                     width: 100%;
                 }
             }
@@ -92,7 +92,7 @@ const HeroStyled = styled.section`
         right: -150px;
         border-radius: 50%;
         border: 2px solid white;
-        animation: logoCharacterJump 4s infinite ease;
+        animation: ${ logoCharacterJump } 4s infinite ease;
 
         &--secondary-state {
             width: 400px;
@@ -158,7 +158,6 @@ const HeroStyled = styled.section`
             height: 400px;
             background-color: white;
             border: 2px solid ${ props => props.theme.deepLilac };
-
 
             &--secondary-state {
                 width: 300px;
