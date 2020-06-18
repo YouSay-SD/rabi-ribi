@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const ContainerStyled = styled.div`
+background-color: black;
+
+`;
+
 const WelcomeStyled = styled.section`
     background-color: #262626;
     padding: 80px 0;
@@ -39,6 +44,11 @@ const WelcomeStyled = styled.section`
 function Welcome() {
     return (
         <WelcomeStyled className="welcome">
+
+            <ContainerStyled>
+
+
+            </ContainerStyled>
 
             <div className="container">
 

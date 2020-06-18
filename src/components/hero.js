@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const logoSize = keyframes`
+const LogoSize = keyframes`
     0% { transform: scale(1); }
 
     25% { transform: scale(1.1); }
@@ -13,7 +13,7 @@ const logoSize = keyframes`
     100% { transform: scale(1); }
 `;
 
-const logoCharacterJump = keyframes`
+const LogoCharacterJump = keyframes`
     0% { transform: translateY(0); }
 
     50% { transform: translateY(-20px); }
@@ -21,7 +21,7 @@ const logoCharacterJump = keyframes`
     100% { transform: translateY(0); }
 `;
 
-const characterEntry = keyframes`
+const CharacterEntry = keyframes`
     0% { transform: translateX(1200px) }
 
     100% { transform: translateX(0) }
@@ -37,168 +37,177 @@ const HeroStyled = styled.section`
     overflow: hidden;
     background-color: rgba(138,86,187,.5);
     background-blend-mode: soft-light;
+`;
 
-    .hero__container {
-        max-width: 1440px;
-        margin: auto;
-        padding: 0 30px;
-        height: 100%;
+const ContainerStyled = styled.div`
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 30px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
 
-        .hero__logo-container {
-            max-width: 550px;
-            background-color: white;
-            padding: 0 40px;
-    
-            .hero__logo {
-                animation: ${ logoSize } 6s infinite;
-                width: 100%;
-                z-index: 1;
-            }
-        }
-
-        .hero__character-container {
-            .hero__primary-character-container {
-                z-index: 2;
-                max-width: 700px;
-                animation: ${ characterEntry } 1s ease;
-                
-                .hero__primary-character {
-                    animation: ${ logoCharacterJump } 4s infinite ease;
-                    width: 100%;
-                }
-            }
-
-            .hero__secondary-character-container {
-                max-width: 400px;
-                margin-right: -470px;
-                z-index: 3;
-                animation: ${ characterEntry } 0.7s ease;
-                
-                .hero__secondary-character {
-                    animation: ${ logoCharacterJump } 4s infinite ease;
-                    width: 100%;
-                }
-            }
-        }
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
     }
+`;
 
-    .circle {
-        width: 800px;
-        height: 800px;
-        background-color: #8A56BB;
-        opacity: .9;
-        position: absolute;
-        bottom: -150px;
-        right: -150px;
-        border-radius: 50%;
-        border: 2px solid white;
-        animation: ${ logoCharacterJump } 4s infinite ease;
+const LogoContainerStyled = styled.div`
+    max-width: 550px;
+    background-color: white;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        &--secondary-state {
-            width: 400px;
-            height: 400px;
-            bottom: initial;
-            right: initial;
-            top: -120px;
-            left: -40px;
-        }
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        max-width: initial;
+        padding: 30px 0;
+        background-color: initial; 
     }
-    
+`;
+
+const LogoStyled = styled.img`
+    animation: ${ LogoSize } 6s infinite;
+    width: 100%;
+    z-index: 1;
+`;
+
+const CharacterContainerStyled = styled.div`
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+        justify-content: flex-end;
+    }
+`;
+
+const RibbonContainerStyled = styled.div`
+    max-width: 400px;
+    margin-right: -470px;
+    z-index: 3;
+    animation: ${ CharacterEntry } 0.7s ease;
 
     @media screen and (max-width: 991px) {
-        .hero__container {
-            .hero__character-container {              
-                .hero__primary-character-container {
-                    max-width: 500px;
-                }
-
-                .hero__secondary-character-container {
-                    max-width: 250px;
-                    margin-right: -260px;
-                }
-            }
-        }
-
-        .circle {
-            width: 600px;
-            height: 600px;
-
-            &--secondary-state {
-                width: 400px;
-                height: 400px;
-            }
-        } 
+        max-width: 250px;
+        margin-right: -260px;
     }
 
     @media screen and (max-width: 767px) {
-        .hero__container {
-            .hero__logo-container {
-                width: 100%;
-                max-width: initial;
-                padding: 30px 0;
-                background-color: initial;
-            }
-
-            .hero__character-container {
-                justify-content: flex-end;
-
-                .hero__primary-character-container {
-                    max-width: 300px;
-                }
-
-                .hero__secondary-character-container {
-                    max-width: 150px;
-                    margin-right: -200px;
-                }
-            }
-        }
-
-        .circle {
-            width: 400px;
-            height: 400px;
-            background-color: white;
-            border: 2px solid ${ props => props.theme.deepLilac };
-
-            &--secondary-state {
-                width: 300px;
-                height: 300px;
-            }
-        }   
-    } 
+        max-width: 150px;
+        margin-right: -200px;
+    }
 `;
+
+const RibbonStyled = styled.img`
+    animation: ${ LogoCharacterJump } 4s infinite ease;
+    width: 100%;
+`;
+
+const ErinaContainerStyled = styled.div`
+    z-index: 2;
+    max-width: 700px;
+    animation: ${ CharacterEntry } 1s ease;
+
+    @media screen and (max-width: 991px) {
+        max-width: 500px;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 300px;
+    }
+`;
+
+const ErinaStyled = styled.img`
+    animation: ${ LogoCharacterJump } 4s infinite ease;
+    width: 100%;
+`;
+
+const CirclePrimaryStyled = styled.div`
+    width: 800px;
+    height: 800px;
+    background-color: #8A56BB;
+    opacity: .9;
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: ${ LogoCharacterJump } 4s infinite ease;
+
+    @media screen and (max-width: 991px) {
+        width: 600px;
+        height: 600px;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 400px;
+        height: 400px;
+        background-color: white;
+        border: 2px solid ${ props => props.theme.deepLilac };
+    }
+`;
+
+const CircleSecondaryStyled = styled.div`
+    width: 400px;
+    height: 400px;
+    top: -120px;
+    left: -40px;
+    background-color: #8A56BB;
+    opacity: .9;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: ${ LogoCharacterJump } 4s infinite ease;
+
+    @media screen and (max-width: 991px) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        border: 2px solid ${ props => props.theme.deepLilac };
+    }
+`;
+
 
 function Hero() {
     return (
         <HeroStyled>
 
-            <div className="container hero__container d-flex justify-content-between flex-column flex-md-row">
+            <ContainerStyled>
 
-                <div className="hero__logo-container d-flex justify-content-center align-items-center">
+                <LogoContainerStyled>
 
-                    <img className="hero__logo" src="./img/logo2.png" alt="Logo" />
+                    <LogoStyled src="./img/logo2.png" alt="Logo" />
 
-                </div>
+                </LogoContainerStyled>
 
-                <div className="hero__character-container d-flex align-items-center">
+                <CharacterContainerStyled>
 
-                    <div className="hero__secondary-character-container">
+                    <RibbonContainerStyled>
 
-                        <img className="hero__secondary-character" src="./img/ribbon.png" alt="Ribbon" title="Ribbon" />
+                        <RibbonStyled src="./img/ribbon.png" alt="Ribbon" title="Ribbon" />
 
-                    </div>
+                    </RibbonContainerStyled>
 
-                    <div className="hero__primary-character-container">
+                    <ErinaContainerStyled>
 
-                        <img className="hero__primary-character" src="./img/erina.png" alt="Erina" title="Erina" />
+                        <ErinaStyled src="./img/erina.png" alt="Erina" title="Erina" />
 
-                    </div>
+                    </ErinaContainerStyled>
 
-                </div>
+                </CharacterContainerStyled>
 
-            </div>
 
-            <div className="circle"></div>
-            <div className="circle circle--secondary-state"></div>
+            </ContainerStyled>
+
+            <CirclePrimaryStyled />
+            <CircleSecondaryStyled />
 
         </HeroStyled>
     )
