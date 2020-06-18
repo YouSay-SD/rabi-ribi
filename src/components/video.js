@@ -13,7 +13,6 @@ const VideoStyled = styled.section`
     video {
         width: 1920px;
         height: 1080px;
-        position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -21,14 +20,8 @@ const VideoStyled = styled.section`
 
     .video__overlay {
         background: rgba(255,255,255,0.1) url('./img/movie_overlay.png') repeat;
-        width: 100%;
-        height: 100%;
-        position: absolute;
         top: 0;
         right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         transition: all .5s ease;
 
         img {
@@ -65,11 +58,11 @@ function Video() {
     return (
         <VideoStyled>
 
-            <video width="600" height="400" muted="true" loop="true" autoplay="" src="./video/Rabi-Ribi-Trailer.mp4" type="video/mp4">
+            <video className="position-absolute" width="600" height="400" muted="true" loop="true" autoplay="" src="./video/Rabi-Ribi-Trailer.mp4" type="video/mp4">
             </video>  
 
             <a href="https://www.youtube.com/watch?reload=9&v=ElWOuxkBFPU">
-                <div className="video__overlay">
+                <div className="video__overlay w-100 h-100 position-absolute d-flex justify-content-center align-items-center">
 
                     <img src="./img/movie_play.png" alt="Play" title="Play" />   
                     
