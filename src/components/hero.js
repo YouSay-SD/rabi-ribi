@@ -159,17 +159,13 @@ const CirclePrimaryStyled = styled.div`
     `}
 `;
 
-const CircleSecondaryStyled = styled.div`
+const CircleSecondaryStyled = styled(CirclePrimaryStyled)`
     width: 400px;
     height: 400px;
     top: -120px;
     left: -40px;
-    background-color: #8A56BB;
-    opacity: .9;
-    position: absolute;
-    border-radius: 50%;
-    border: 2px solid white;
-    animation: ${ LogoCharacterJump } 4s infinite ease;
+    bottom: initial;
+    right: initial;
 
     /* Tablet */
     ${respondBelow.md`
@@ -181,8 +177,6 @@ const CircleSecondaryStyled = styled.div`
     ${respondBelow.sm`
         width: 300px;
         height: 300px;
-        background-color: white;
-        border: 2px solid ${ props => props.theme.colors.primary }; 
     `}
 `;
 
@@ -192,7 +186,7 @@ function Hero() {
         <HeroStyled>
 
             <ContainerStyled>
-
+                
                 <LogoContainerStyled>
 
                     <LogoStyled src="./img/logo2.png" alt="Logo" />

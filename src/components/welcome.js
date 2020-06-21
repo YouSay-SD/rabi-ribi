@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ContainerStyled = styled.div`
-background-color: black;
+    background-color: black;
 
 `;
 
@@ -39,7 +39,7 @@ const WelcomeStyled = styled.section`
             height: 470px;
         }
     } 
-`
+`;
 
 function Welcome() {
     return (

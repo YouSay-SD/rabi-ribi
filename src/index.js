@@ -14,7 +14,7 @@ ReactDOM.render(
     <React.StrictMode>
       <GlobalStyle />
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
 
   </ThemeProvider>,
     document.getElementById('root')

@@ -1,55 +1,128 @@
 import React from 'react';
 import styled from 'styled-components';
+import { respondBelow } from '../theme/breakPoints';
 
 const FooterStyled = styled.footer`
     font-family: 'Comic Neue';    
+`;
 
-    .footer__logo-container {
-        background-color: #f0f0f0;
-        padding: 30px 0;
+const LogoContainerStyled = styled.div`
+    background-color: #f0f0f0;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
-        .footer__logo-content {
-            img {
-                max-width: 250px;
-                margin-right: 15px;
-            }
-    
-            p {
-                margin-left: 15px;
-            }
+const LogoContentStyled = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
 
+    img {
+        width: 100%;
+        max-width: 250px;
+        margin-right: 15px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    /* Mobile */
+    ${respondBelow.sm`
+        flex-wrap: wrap;
+        padding: 0 20px;
+        
+        img {
+            max-width: initial;
+            margin-right: 0;
+            margin-bottom: 20px;
         }
 
-    }
+        p {
+            margin-left: 0;
+        }
+    `}
+`;
 
-    .footer__social-media-container {
-        background-color: white;
-        height: 300px;
+const SocialMediaContainerStyled = styled.div`
+    background-color: white;
+    padding: 5px 0;
+    text-align: center;
+
+    img {
+        width: 33px;
+        margin: 0 5px;
     }
-`
+`;
+
+const CopyrightContainerStyled = styled.div`
+    padding: 6px 0;
+    border-top: 2px solid #8A56BB;
+    background-color: #262626;
+    text-align: center;
+
+    p {
+        font-size: 14px;
+        color: white;
+
+        /* Mobile */
+        ${respondBelow.sm`
+            font-size: 11px;
+        `}
+    }
+`;
 
 function Footer() {
     return (
         <FooterStyled>
 
-            <div className="footer__logo-container">
+            <LogoContainerStyled>
 
-                <div className="container footer__logo-content d-flex justify-content-center align-items-center">
+                <LogoContentStyled>
 
                     <img src="./img/footer/logo.jpg" alt="Logo" title="Logo" />
 
-                    <p>Lorem impupt alsnda</p>
+                    <p>名称：プリンセスコネクト！Rabi-Ribi
+                    ジャンル：アニメRPG
+                    対応機種：iOS/Android
+                    価格：基本無料（一部アイテム課金制）</p>
 
-                </div>
+                </LogoContentStyled>
 
-            </div>
-
-
-                <div className="footer__social-media-container">
+            </LogoContainerStyled>
 
 
+            <SocialMediaContainerStyled>
+                
+                <a href="https://www.facebook.com/RabiRibiGame/">
 
-                </div>
+                    <img src="./img/social-media/facebook-cute.svg" alt="Facebook" title="Facebook" />
+
+                </a>
+
+                <a href="https://www.youtube.com/user/SekaiPro/videos">
+
+                    <img src="./img/social-media/youtube-cute.svg" alt="Youtube" title="Youtube" />
+
+                </a>
+
+                <a href="https://twitter.com/rabiribigame?lang=es">
+
+                    <img src="./img/social-media/twitter-cute.svg" alt="Twitter" title="Twitter" />
+
+                </a>
+
+            </SocialMediaContainerStyled>
+
+            <CopyrightContainerStyled>
+
+                <p>©鍵空とみやき/SQUARE ENIX・ハッピーシュガーライフ製作委員会</p>
+
+            </CopyrightContainerStyled>
 
         </FooterStyled>
     )

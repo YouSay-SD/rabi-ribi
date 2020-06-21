@@ -59,7 +59,7 @@ const ImgPlay = styled.img`
     opacity: .4;
     transition: all .5s ease;
 
-    ${ VideoOverlay }:hover {
+    ${ VideoOverlay }:hover & {
         opacity: .8;
     }
 `;
