@@ -6,7 +6,6 @@ import Video from './components/video';
 import Welcome from './components/welcome';
 import Footer from './components/footer';
 
-
 function App() {
   return (
     <>

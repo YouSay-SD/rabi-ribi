@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { respondBelow } from '../theme/breakPoints';
 
 const LogoSize = keyframes`
     0% { transform: scale(1); }
@@ -46,10 +47,11 @@ const ContainerStyled = styled.div`
     height: 100%;
     display: flex;
     justify-content: space-between;
-
-    @media screen and (max-width: 767px) {
+   
+    /* Mobile */
+    ${respondBelow.sm`
         flex-direction: column;
-    }
+    `}
 `;
 
 const LogoContainerStyled = styled.div`
@@ -60,12 +62,13 @@ const LogoContainerStyled = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: 767px) {
+    /* Mobile */
+    ${respondBelow.sm`
         width: 100%;
         max-width: initial;
         padding: 30px 0;
-        background-color: initial; 
-    }
+        background-color: initial;  
+    `}
 `;
 
 const LogoStyled = styled.img`
@@ -78,9 +81,10 @@ const CharacterContainerStyled = styled.div`
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 767px) {
-        justify-content: flex-end;
-    }
+    /* Mobile */
+    ${respondBelow.sm`
+        justify-content: flex-end; 
+    `}
 `;
 
 const RibbonContainerStyled = styled.div`
@@ -89,15 +93,17 @@ const RibbonContainerStyled = styled.div`
     z-index: 3;
     animation: ${ CharacterEntry } 0.7s ease;
 
-    @media screen and (max-width: 991px) {
+    /* Tablet */
+    ${respondBelow.md`
         max-width: 250px;
-        margin-right: -260px;
-    }
+        margin-right: -260px;  
+    `}
 
-    @media screen and (max-width: 767px) {
+    /* Mobile */
+    ${respondBelow.sm`
         max-width: 150px;
-        margin-right: -200px;
-    }
+        margin-right: -200px;  
+    `}
 `;
 
 const RibbonStyled = styled.img`
@@ -110,13 +116,15 @@ const ErinaContainerStyled = styled.div`
     max-width: 700px;
     animation: ${ CharacterEntry } 1s ease;
 
-    @media screen and (max-width: 991px) {
-        max-width: 500px;
-    }
+    /* Tablet */
+    ${respondBelow.md`
+        max-width: 500px; 
+    `}
 
-    @media screen and (max-width: 767px) {
+    /* Mobile */
+    ${respondBelow.sm`
         max-width: 300px;
-    }
+    `}
 `;
 
 const ErinaStyled = styled.img`
@@ -136,17 +144,19 @@ const CirclePrimaryStyled = styled.div`
     border: 2px solid white;
     animation: ${ LogoCharacterJump } 4s infinite ease;
 
-    @media screen and (max-width: 991px) {
+    /* Tablet */
+    ${respondBelow.md`
         width: 600px;
-        height: 600px;
-    }
+        height: 600px;  
+    `}
 
-    @media screen and (max-width: 767px) {
+    /* Mobile */
+    ${respondBelow.sm`
         width: 400px;
         height: 400px;
         background-color: white;
-        border: 2px solid ${ props => props.theme.deepLilac };
-    }
+        border: 2px solid ${ props => props.theme.colors.primary };  
+    `}
 `;
 
 const CircleSecondaryStyled = styled.div`
@@ -161,17 +171,19 @@ const CircleSecondaryStyled = styled.div`
     border: 2px solid white;
     animation: ${ LogoCharacterJump } 4s infinite ease;
 
-    @media screen and (max-width: 991px) {
+    /* Tablet */
+    ${respondBelow.md`
         width: 400px;
-        height: 400px;
-    }
+        height: 400px; 
+    `}
 
-    @media screen and (max-width: 767px) {
+    /* Mobile */
+    ${respondBelow.sm`
         width: 300px;
         height: 300px;
         background-color: white;
-        border: 2px solid ${ props => props.theme.deepLilac };
-    }
+        border: 2px solid ${ props => props.theme.colors.primary }; 
+    `}
 `;
 
 
@@ -203,10 +215,10 @@ function Hero() {
 
                 </CharacterContainerStyled>
 
-
             </ContainerStyled>
 
             <CirclePrimaryStyled />
+            
             <CircleSecondaryStyled />
 
         </HeroStyled>
