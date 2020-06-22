@@ -1,74 +1,76 @@
 import React from 'react';
 import styled from 'styled-components';
+import PresentationCard from './presentationCard';
 
-const ContainerStyled = styled.div`
-    background-color: black;
-
-`;
 
 const WelcomeStyled = styled.section`
-    background-color: #262626;
+    background-color: #363a43;
     padding: 80px 0;
-
-    .welcome__title {
-        font-size: 65px;
-        font-family: 'Comic Neue';
-        color: #e85198;
-        font-weight: bold;
-        text-align: center;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke-width: 3px;
-    }
-
-    .panel {
-        .panel__left-side {
-            background-image: url('./img/panel-placeholder.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 640px;
-            height: 470px;
-        }
-
-        .panel__right-side {
-            background-image: url('./img/panel-placeholder-2.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 320px;
-            height: 470px;
-        }
-    } 
 `;
+
+const WelcomeTitle = styled.h1`
+    font-size: 65px;
+    font-family: 'Comic Neue';
+    color: #e85198;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+`;
+
+const PanelContainerStyled = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 300px;
+`;
+
+const PanelLeftStyled = styled.div`
+    width: 640px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+`;
+
+const PanelRightStyled = styled.div`
+    width: 320px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+`;
+
 
 function Welcome() {
     return (
         <WelcomeStyled className="welcome">
 
-            <ContainerStyled>
-
-
-            </ContainerStyled>
-
             <div className="container">
 
-                <h1 className="welcome__title">Welcome to Rabi Ribi!</h1>
+                <WelcomeTitle>Welcome to Rabi Ribi!</WelcomeTitle>
 
-                <div className="panel d-flex flex-wrap justify-content-around">
+                <PresentationCard />
 
-                    <div className="panel__left-side">
+                <PanelContainerStyled>
 
-                    
+                    <PanelLeftStyled>
 
-                    </div>
+                        <img src="./img/panel-placeholder.png" alt="Logo" />
 
-                    <div className="panel__right-side">
+                    </PanelLeftStyled>
 
-                    
+                    <PanelRightStyled>
 
-                    </div>
+                        <img src="./img/panel-placeholder-2.png" alt="Logo" />
 
-                </div>
+                    </PanelRightStyled>
+
+                </PanelContainerStyled>
 
             </div>
 

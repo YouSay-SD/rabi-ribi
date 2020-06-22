@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     p {
         margin-bottom: 0;
     }
+
+    body {
+        font-family: 'Comic Neue';
+    }
 `;
 
 export default GlobalStyle;
