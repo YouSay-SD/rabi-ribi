@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 
@@ -27,37 +27,52 @@ const RabbitLoaderJump = keyframes`
 `;
 
 const HeaderStyled = styled.header`
-    width: 100vw;
     height: 100vh;
     position: fixed;
     z-index: 99;
-    font-family: 'Comic Neue';
+    font-family: ${ props => props.theme.fontFamily.primary };
 
     nav {
-        border: 35px solid white;
-        background-color: white;
+        width: 0vw;
+        background-color: ${ props => props.theme.colors.white };
         display: flex;
         height: 100%;
+        transition: all .3s ease;
+        overflow: hidden;
+        padding: 0;
 
         /* Mobile */
         ${respondBelow.sm`
             border: none;
         `}
     }
+
+    /* Active */
+    .active {
+        width: 100vw;
+        padding: 35px;
+
+        ul {
+            li {
+                a { opacity: 1; }
+            }
+        }
+    }
 `;
 
 const MenuLeftSideStyled = styled.div`
     width: 50%;
     height: 100%;
-    background-color: white;
+    background-color: ${ props => props.theme.colors.white };
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     /* Mobile */
     ${respondBelow.sm`
-        width: 45%;
+        width: 55%;
     `}
 
     ul {
@@ -66,21 +81,27 @@ const MenuLeftSideStyled = styled.div`
         li {
             padding: 7px 0;
 
-            a{
+            a {
                 text-decoration: none;
                 font-size: 34px;
-                color: #8A56BB;
-                font-weight: bold;
+                color: ${ props => props.theme.colors.primary };
+                font-weight: ${ props => props.theme.fontWeigth.bold };
                 padding: 5px 20px;
-                -webkit-text-fill-color: white;
+                -webkit-text-fill-color: ${ props => props.theme.colors.white };
                 -webkit-text-stroke-width: 1px;
                 position: relative;
                 z-index: 2;
+                opacity: 0;
                 transition: all .3s ease;
+
+                /* Mobile */
+                ${respondBelow.sm`
+                    font-size: 21px;
+                `}
 
                 &:before {
                     content: '';
-                    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(138,86,176,1) 100%);
+                    background: linear-gradient(90deg, rgba(${ props => props.theme.colorsRGB.white } ,1) 0%, rgba(${ props => props.theme.colorsRGB.primary } ,1) 100%);
                     width: 200%;
                     height: 100%;
                     position: absolute;
@@ -93,8 +114,8 @@ const MenuLeftSideStyled = styled.div`
                 }
 
                 &:hover {
-                    color: white;
-                    -webkit-text-fill-color: white;
+                    color: ${ props => props.theme.colors.white };
+                    -webkit-text-fill-color: ${ props => props.theme.colors.white };
                     -webkit-text-stroke-width: 0;
 
                     &:before {
@@ -118,7 +139,7 @@ const MenuRightSideStyled = styled.div`
 
     /* Mobile */
     ${respondBelow.sm`
-        width: 55%;
+        width: 45%;
     `}
 `;
 
@@ -128,7 +149,7 @@ const RabbitLoaderStyled = styled.div`
     left: 10px;
     top: 46%;
     z-index: 99;
-    background-color: #8A56BB;
+    background-color: ${ props => props.theme.colors.primary };
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -138,13 +159,19 @@ const RabbitLoaderStyled = styled.div`
     animation: ${ RabbitLoaderJump } 2s infinite ease;
     transition: all .3s ease;
 
+    /* Mobile */
+    ${respondBelow.sm`
+        top: 15px;
+        left: 15px;
+    `}
+
     &:hover {
-        background-color: white;
+        background-color: ${ props => props.theme.colors.white };
         animation: ${ RabbitLoaderJump } 1s infinite ease;
 
         .rabbit-ear-container {
             span {
-                background-color: #8A56BB;
+                background-color: ${ props => props.theme.colors.primary };
                 border-right: 2px solid #805D93;
             }
 
@@ -158,7 +185,7 @@ const RabbitLoaderStyled = styled.div`
         }
 
         .rabbit-body {
-            background-color: #8A56BB;
+            background-color: ${ props => props.theme.colors.primary };
             border-bottom: 3px solid #805D93;
             border-right: 3px solid #805D93;
         }
@@ -170,7 +197,7 @@ const RabbitLoaderStyled = styled.div`
         justify-content: center;
 
         span {
-            background-color: white;
+            background-color: ${ props => props.theme.colors.white };
             width: 20px;
             height: 35px;
             display: inline-block;
@@ -190,7 +217,7 @@ const RabbitLoaderStyled = styled.div`
     }
 
     .rabbit-body {
-        background-color: white;
+        background-color: ${ props => props.theme.colors.white };
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -203,10 +230,17 @@ const RabbitLoaderStyled = styled.div`
 `;
 
 function Header() {
+
+    const [ menuStatus, setMenuStatus ] = useState( false );
+
+    const handleToggleClick = () => {
+        setMenuStatus( !menuStatus );
+    }
+
     return (
         <HeaderStyled>
 
-            <nav>
+            <nav className={ ( menuStatus ) ? 'active' : '' }>
 
                 <MenuLeftSideStyled>
 
@@ -231,7 +265,7 @@ function Header() {
 
             </nav>
 
-            <RabbitLoaderStyled>
+            <RabbitLoaderStyled onClick={ handleToggleClick }>
 
                 <div className="rabbit-ear-container">
 

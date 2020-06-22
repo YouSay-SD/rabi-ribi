@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 
 const FooterStyled = styled.footer`
-    font-family: 'Comic Neue';    
+    font-family: ${ props => props.theme.fontFamily.primary };   
 `;
 
 const LogoContainerStyled = styled.div`
-    background-color: #f0f0f0;
+    background-color: ${ props => props.theme.colors.grey };
     padding: 30px 0;
     display: flex;
     justify-content: center;
@@ -49,7 +49,7 @@ const LogoContentStyled = styled.div`
 `;
 
 const SocialMediaContainerStyled = styled.div`
-    background-color: white;
+    background-color: ${ props => props.theme.colors.white };
     padding: 5px 0;
     text-align: center;
 
@@ -61,13 +61,13 @@ const SocialMediaContainerStyled = styled.div`
 
 const CopyrightContainerStyled = styled.div`
     padding: 6px 0;
-    border-top: 2px solid #8A56BB;
-    background-color: #262626;
+    border-top: 2px solid ${ props => props.theme.colors.primary };
+    background-color: ${ props => props.theme.colors.terciary };
     text-align: center;
 
     p {
         font-size: 14px;
-        color: white;
+        color: ${ props => props.theme.colors.white };
 
         /* Mobile */
         ${respondBelow.sm`

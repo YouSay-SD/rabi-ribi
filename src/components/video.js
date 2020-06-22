@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 
 const VideoStyled = styled.section`
-    font-family: 'Comic Neue';
+    font-family: ${ props => props.theme.fontFamily.primary };
     width: 100%;
     height: 600px;
     overflow: hidden;
     position: relative;
-    border-top: 10px solid white;
-    border-bottom: 10px solid #e85198;
+    border-top: 10px solid ${ props => props.theme.colors.white };
+    border-bottom: 10px solid ${ props => props.theme.colors.secondary };
 
     /* Tablet */
     ${respondBelow.md`
@@ -44,13 +44,13 @@ const VideoOverlay = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255,255,255,0.1) url('./img/movie_overlay.png') repeat;
+    background: rgba(${ props => props.theme.colorsRGB.white }, 0.1) url('./img/movie_overlay.png') repeat;
     top: 0;
     right: 0;
     transition: all .5s ease;
 
     :hover {
-        background: rgba(255,255,255,0.5) url('./img/movie_overlay.png') repeat;
+        background: rgba(${ props => props.theme.colorsRGB.white },0.5) url('./img/movie_overlay.png') repeat;
     }
 `;
 

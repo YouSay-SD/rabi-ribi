@@ -23,9 +23,9 @@ const LogoCharacterJump = keyframes`
 `;
 
 const CharacterEntry = keyframes`
-    0% { transform: translateX(1200px) }
+    0% { transform: translateX(1200px); }
 
-    100% { transform: translateX(0) }
+    100% { transform: translateX(0); }
 `;
 
 const HeroStyled = styled.section`    
@@ -36,7 +36,7 @@ const HeroStyled = styled.section`
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    background-color: rgba(138,86,187,.5);
+    background-color: rgba(${ props => props.theme.colorsRGB.primary },.5);
     background-blend-mode: soft-light;
 `;
 
@@ -135,13 +135,13 @@ const ErinaStyled = styled.img`
 const CirclePrimaryStyled = styled.div`
     width: 800px;
     height: 800px;
-    background-color: #8A56BB;
+    background-color: ${ props => props.theme.colors.primary }; 
     opacity: .9;
     position: absolute;
     bottom: -150px;
     right: -150px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid ${ props => props.theme.colors.white };
     animation: ${ LogoCharacterJump } 4s infinite ease;
 
     /* Tablet */
@@ -154,7 +154,7 @@ const CirclePrimaryStyled = styled.div`
     ${respondBelow.sm`
         width: 400px;
         height: 400px;
-        background-color: white;
+        background-color: ${ props => props.theme.colors.white }; 
         border: 2px solid ${ props => props.theme.colors.primary };  
     `}
 `;
