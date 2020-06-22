@@ -159,28 +159,6 @@ const CirclePrimaryStyled = styled.div`
     `}
 `;
 
-const CircleSecondaryStyled = styled(CirclePrimaryStyled)`
-    width: 400px;
-    height: 400px;
-    top: -120px;
-    left: -40px;
-    bottom: initial;
-    right: initial;
-
-    /* Tablet */
-    ${respondBelow.md`
-        width: 400px;
-        height: 400px; 
-    `}
-
-    /* Mobile */
-    ${respondBelow.sm`
-        width: 300px;
-        height: 300px;
-    `}
-`;
-
-
 function Hero() {
     return (
         <HeroStyled>
@@ -213,8 +191,6 @@ function Hero() {
 
             <CirclePrimaryStyled />
             
-            <CircleSecondaryStyled />
-
         </HeroStyled>
     )
 }
