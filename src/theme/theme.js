@@ -8,6 +8,11 @@ export default {
         white: '#ffffff',
         grey: '#f0f0f0'
     },
+    // Colors RGB
+    colorsRGB: {
+        primary: '138,86,187',
+        white: '255,255,255'
+    },
     // Font Family
     fontFamily: {
         primary: 'Comic Neue'
