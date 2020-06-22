@@ -120,7 +120,7 @@ function Footer() {
 
             <CopyrightContainerStyled>
 
-                <p>©鍵空とみやき/SQUARE ENIX・ハッピーシュガーライフ製作委員会</p>
+                <p>©鍵空とみやき/SEKAI PROJECT・ハッピーシュガーライフ製作委員会</p>
 
             </CopyrightContainerStyled>
 
