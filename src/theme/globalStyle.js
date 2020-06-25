@@ -16,12 +16,15 @@ const GlobalStyle = createGlobalStyle`
         background-image: url('./img/background/bg-cross.gif');
     }
 
+    section {
+        margin: 70px 0;
+        padding: 70px 0;
+    }
+
     /* Background Rose */
     .rose-background {
         background-image: url('./img/background/bg-pink.png');
         background-position: center top;
-        padding: 70px 0;
-        margin: 70px 0;
         position: relative;
 
         /* Cloud Top */

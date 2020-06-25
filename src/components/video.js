@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 
-const VideoStyled = styled.section`
+const VideoStyled = styled.div`
     font-family: ${ props => props.theme.fontFamily.primary };
     width: 100%;
     height: 600px;

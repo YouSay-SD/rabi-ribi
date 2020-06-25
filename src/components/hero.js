@@ -28,7 +28,7 @@ const CharacterEntry = keyframes`
     100% { transform: translateX(0); }
 `;
 
-const HeroStyled = styled.section`    
+const HeroStyled = styled.div`    
     height: 100vh;
     background-image: url('./img/background.png');
     background-size: cover;
@@ -167,7 +167,7 @@ function Hero() {
                 
                 <LogoContainerStyled>
 
-                    <LogoStyled src="./img/logo2.png" alt="Logo" />
+                    <LogoStyled src="./img/logo/logo2.png" alt="Logo" />
 
                 </LogoContainerStyled>
 
