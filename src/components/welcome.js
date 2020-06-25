@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import PresentationCard from './presentationCard';
-
+import { respondBelow } from '../theme/breakPoints';
 
 const WelcomeStyled = styled.section`
-    background-color: #363a43;
-    padding: 80px 0;
+    margin-top: 0 !important;
+
+    /* Remove Cloud Top */
+    &:before {
+        display: none;
+    }
 `;
 
 const WelcomeTitle = styled.h1`
@@ -16,61 +19,60 @@ const WelcomeTitle = styled.h1`
     font-weight: bold;
     text-align: center;
     margin-bottom: 60px;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 3px;
+
+    /* Mobile */
+    ${respondBelow.sm`
+        font-size: 45px;
+        -webkit-text-stroke-width: 2px;
+    `}
 `;
 
-const PanelContainerStyled = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    min-height: 300px;
-`;
+const WelcomeCopy = styled.p`
+    color: #e85198;
+    padding: 50px;
+    border: 2px solid #e85198;
+    border-radius: 15px;
+    font-size: 23px;
+    position: relative;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
 
-const PanelLeftStyled = styled.div`
-    width: 640px;
+    /* Mobile */
+    ${respondBelow.sm`
+        font-size: 16px;
+        padding: 45px 30px;
+    `}
 
     img {
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        right: -65px;
+        bottom: -65px;
+
+        /* Mobile */
+        ${respondBelow.sm`
+            right: -10px;
+            max-width: 100px;
+        `}
     }
 `;
-
-const PanelRightStyled = styled.div`
-    width: 320px;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-`;
-
 
 function Welcome() {
     return (
-        <WelcomeStyled className="welcome">
+        <WelcomeStyled className="rose-background">
 
             <div className="container">
 
                 <WelcomeTitle>Welcome to Rabi Ribi!</WelcomeTitle>
 
-                <PresentationCard />
-
-                <PanelContainerStyled>
-
-                    <PanelLeftStyled>
-
-                        <img src="./img/panel-placeholder.png" alt="Logo" />
-
-                    </PanelLeftStyled>
-
-                    <PanelRightStyled>
-
-                        <img src="./img/panel-placeholder-2.png" alt="Logo" />
-
-                    </PanelRightStyled>
-
-                </PanelContainerStyled>
+                <WelcomeCopy>Dodge bullets, missiles and lasers in battle as you wrap your head around that bunny girl costume! 
+                    Combo away with your mighty Piko Hammer or spam various spells from afar with your fiery fairy friend. 
+                    Explore and explode through Rabi-Rabi Island as you collect power-ups and uncover secrets...
+                    
+                    <img src="./img/chibi/chibi-ribbon.png" alt="Ribbon" title="Ribbon" />    
+                    
+                </WelcomeCopy>
 
             </div>
 
