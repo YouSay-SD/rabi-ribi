@@ -18,31 +18,30 @@ const WelcomeTextContentStyled = styled.div`
 `;
 
 const WelcomeTitleStyled = styled.h1`
-    font-size: 65px;
-    line-height: 1;
-    font-weight: bold;
+    font-size: 50px;
+    font-weight: ${ props => props.theme.fontWeigth.bold };
     text-align: center;
-    padding: 0 20px;
+    padding: 10px 20px;
     margin-bottom: 40px;
     color: ${ props => props.theme.colors.secondary };
     -webkit-text-fill-color: ${ props => props.theme.colors.white };
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 2px;
     
     /* Mobile */
     ${respondBelow.sm`
-        font-size: 45px;
+        font-size: 35px;
         -webkit-text-stroke-width: 2px;
     `}  
 `;
 
 const WelcomeCopyStyled = styled.p`
-    color: #e85198;
+    color: ${ props => props.theme.colors.secondary };
     padding: 50px;
-    border: 2px solid #e85198;
+    border: 2px solid ${ props => props.theme.colors.secondary };
     border-radius: 15px;
     font-size: 23px;
     position: relative;
-    -webkit-text-fill-color: white;
+    -webkit-text-fill-color: ${ props => props.theme.colors.white };
     -webkit-text-stroke-width: 1px;
 
     /* Mobile */

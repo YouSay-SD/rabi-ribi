@@ -15,7 +15,8 @@ export default {
     },
     // Font Family
     fontFamily: {
-        primary: 'Comic Neue'
+        primary: 'Rammetto One, cursive',
+        secondary: 'Comic Neue'
     },
     // Font Weight 
     fontWeigth: {
