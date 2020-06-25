@@ -11,25 +11,31 @@ const WelcomeStyled = styled.section`
     }
 `;
 
-const WelcomeTitle = styled.h1`
+const WelcomeTextContentStyled = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+`;
+
+const WelcomeTitleStyled = styled.h1`
     font-size: 65px;
-    font-family: 'Comic Neue';
-    color: #e85198;
     line-height: 1;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 60px;
-    -webkit-text-fill-color: white;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    color: ${ props => props.theme.colors.secondary };
+    -webkit-text-fill-color: ${ props => props.theme.colors.white };
     -webkit-text-stroke-width: 3px;
-
+    
     /* Mobile */
     ${respondBelow.sm`
         font-size: 45px;
         -webkit-text-stroke-width: 2px;
-    `}
+    `}  
 `;
 
-const WelcomeCopy = styled.p`
+const WelcomeCopyStyled = styled.p`
     color: #e85198;
     padding: 50px;
     border: 2px solid #e85198;
@@ -64,15 +70,19 @@ function Welcome() {
 
             <div className="container">
 
-                <WelcomeTitle>Welcome to Rabi Ribi!</WelcomeTitle>
+                <WelcomeTextContentStyled>
 
-                <WelcomeCopy>Dodge bullets, missiles and lasers in battle as you wrap your head around that bunny girl costume! 
-                    Combo away with your mighty Piko Hammer or spam various spells from afar with your fiery fairy friend. 
-                    Explore and explode through Rabi-Rabi Island as you collect power-ups and uncover secrets...
-                    
-                    <img src="./img/chibi/chibi-ribbon.png" alt="Ribbon" title="Ribbon" />    
-                    
-                </WelcomeCopy>
+                    <WelcomeTitleStyled className="box-title">Welcome to Rabi Ribi!</WelcomeTitleStyled>
+
+                    <WelcomeCopyStyled>Dodge bullets, missiles and lasers in battle as you wrap your head around that bunny girl costume! 
+                        Combo away with your mighty Piko Hammer or spam various spells from afar with your fiery fairy friend. 
+                        Explore and explode through Rabi-Rabi Island as you collect power-ups and uncover secrets...
+                        
+                        <img src="./img/chibi/chibi-ribbon.png" alt="Ribbon" title="Ribbon" />    
+                        
+                    </WelcomeCopyStyled>
+
+                </WelcomeTextContentStyled>
 
             </div>
 
