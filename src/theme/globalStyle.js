@@ -14,11 +14,20 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: ${ props => props.theme.fontFamily.primary };
         background-image: url('./img/background/bg-cross.gif');
+        color: ${ props => props.theme.colors.white };
     }
 
     section {
         margin: 70px 0;
         padding: 70px 0;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     /* Background Rose */

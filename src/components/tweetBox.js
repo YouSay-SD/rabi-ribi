@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-
+import Button from './button';
 
 const TweetBoxStyled = styled.div`
     box-shadow: 0 0 0 2px ${ props => props.theme.colors.white };
@@ -13,14 +13,17 @@ const TweetBoxStyled = styled.div`
 
     span {
         background-color: ${ props => props.theme.colors.secondary };
-        padding: 0 20px 0 5px;
+        padding: 2px 20px 0 5px;
         transform: rotate(-4deg) translateX(-34px);
         display: inline-block;
         font-size: 18px;
+
+        /* Mobile */
+        ${respondBelow.sm`
+            transform: rotate(-4deg) translateX(-25px);
+        `}
     }
 `;
-
-
 
 function TweetBox() {
     return (
@@ -37,7 +40,7 @@ function TweetBox() {
                 noFooter
             />
 
-            <a className="cta" href="www.google.com">Follow</a>
+            <Button />
 
         </TweetBoxStyled>
     )
