@@ -16,6 +16,15 @@ const GlobalStyle = createGlobalStyle`
         font-family: ${ props => props.theme.fontFamily.primary };
         background-image: url('./img/background/bg-cross.gif');
         color: ${ props => props.theme.colors.white };
+
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: ${ props => props.theme.colors.secondary };
+            border-radius: 5px;
+        }
     }
 
     section {
