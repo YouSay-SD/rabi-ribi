@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    p {
+    p, h3 {
         margin-bottom: 0;
     }
 
@@ -61,6 +61,17 @@ const GlobalStyle = createGlobalStyle`
         font-weight: ${ props => props.theme.fontWeigth.bold };
         text-align: center;
         padding: 10px 60px;
+        color: ${ props => props.theme.colors.secondary };
+        -webkit-text-fill-color: ${ props => props.theme.colors.white };
+        -webkit-text-stroke-width: 1.5px;
+    }
+
+    h3 {
+        font-weight: ${ props => props.theme.fontWeigth.bold };
+        font-size: 20px;
+        text-align: center;
+        padding: 7px 0;
+        display: inline-block;
         color: ${ props => props.theme.colors.secondary };
         -webkit-text-fill-color: ${ props => props.theme.colors.white };
         -webkit-text-stroke-width: 1.5px;
