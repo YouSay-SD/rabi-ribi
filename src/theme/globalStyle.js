@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { respondBelow } from '../theme/breakPoints';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -28,6 +29,32 @@ const GlobalStyle = createGlobalStyle`
         &:hover {
             text-decoration: none;
         }
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: ${ props => props.theme.fontWeigth.bold };
+        text-align: center;
+        padding: 10px 20px;
+        margin-bottom: 40px;
+        color: ${ props => props.theme.colors.secondary };
+        -webkit-text-fill-color: ${ props => props.theme.colors.white };
+        -webkit-text-stroke-width: 2px;
+        
+        /* Mobile */
+        ${respondBelow.sm`
+            font-size: 35px;
+            -webkit-text-stroke-width: 2px;
+        `} 
+    }
+
+    h2 {
+        font-weight: ${ props => props.theme.fontWeigth.bold };
+        text-align: center;
+        padding: 10px 60px;
+        color: ${ props => props.theme.colors.secondary };
+        -webkit-text-fill-color: ${ props => props.theme.colors.white };
+        -webkit-text-stroke-width: 1.5px;
     }
 
     /* Background Rose */

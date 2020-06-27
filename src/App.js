@@ -5,6 +5,7 @@ import Hero from './components/hero';
 import Video from './components/video';
 import Welcome from './components/welcome';
 import Poster from './components/poster';
+import PagesViewer from './components/pagesViewer';
 import Footer from './components/footer';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
       <Welcome />
 
       <Poster />
+
+      <PagesViewer />
 
       <Footer />
 
