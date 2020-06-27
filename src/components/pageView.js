@@ -9,12 +9,56 @@ const PageViewStyled = styled.article`
     border: dotted 1px ${ props => props.theme.colors.secondary };
     border-radius: 0 0 50px 50px;
     padding: 5px;
+    position: relative;
+    transition: all .5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+`;
+
+const PageViewTitleStyled = styled.h3`
+    width: 100%;
+    transition: all .5s ease;
+
+    ${ PageViewStyled }:hover & {
+        transform: scale(1.1);
+    }
+`;
+
+const PageViewImgStyled = styled.div`
+    position: relative;
+    transition: all .5s ease;
+
+    &:before {
+        content: '';
+        transition: all .5s ease;
+        background-color: rgba(${ props => props.theme.colorsRGB.secondary }, .5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    ${ PageViewStyled }:hover & {
+        &:before {
+            opacity: 1;
+        }
+    }
 
     img {
         width: 100%;
         height: 250px;
         object-fit: cover;
         object-position: center center;
+        position: relative;
+
+        ${ PageViewStyled }:hover & {
+            filter: blur(3px);
+        }
 
         /* Tablet */
         ${respondBelow.md`
@@ -26,16 +70,25 @@ const PageViewStyled = styled.article`
             height: 180px;
         `}
     }
+`;
 
-    span {
-        width: 100%;
-        font-size: 20px;
-        padding: 7px 0;
-        display: inline-block;
-        color: ${ props => props.theme.colors.secondary };
-        -webkit-text-fill-color: ${ props => props.theme.colors.white };
-        -webkit-text-stroke-width: 1.5px;
+const PageViewCopyStyled = styled.p`
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    z-index: 2;
+    opacity: 0;
+    transition: all .5s ease;
+
+    ${ PageViewStyled }:hover & {
+        opacity: 1;
     }
+
+    /* Mobile */
+    ${respondBelow.sm`
+        font-size: 13px;
+    `}
 `;
 
 function PageView({ img, alt, title }) {
@@ -43,9 +96,15 @@ function PageView({ img, alt, title }) {
 
         <PageViewStyled>
 
-            <img src={ img } alt={ alt } title={ title } />
+            <PageViewImgStyled>
 
-            <span>Page:</span>
+                <img src={ img } alt={ alt } title={ title } />
+
+            </PageViewImgStyled>
+
+            <PageViewTitleStyled>Page:</PageViewTitleStyled>
+
+            <PageViewCopyStyled>Dodge bullets, missiles and lasers in battle as you wrap your head around that bunny girl costume! Combo away with your mighty...</PageViewCopyStyled>
 
         </PageViewStyled>
 
