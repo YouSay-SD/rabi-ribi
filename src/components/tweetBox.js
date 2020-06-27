@@ -40,7 +40,7 @@ function TweetBox() {
                 noFooter
             />
 
-            <Button />
+            <Button url={ 'www.google.com' } title={ 'Followw' }/>
 
         </TweetBoxStyled>
     )

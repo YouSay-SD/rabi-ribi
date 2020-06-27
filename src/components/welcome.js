@@ -17,23 +17,6 @@ const WelcomeTextContentStyled = styled.div`
     flex-wrap: wrap;
 `;
 
-const WelcomeTitleStyled = styled.h1`
-    font-size: 50px;
-    font-weight: ${ props => props.theme.fontWeigth.bold };
-    text-align: center;
-    padding: 10px 20px;
-    margin-bottom: 40px;
-    color: ${ props => props.theme.colors.secondary };
-    -webkit-text-fill-color: ${ props => props.theme.colors.white };
-    -webkit-text-stroke-width: 2px;
-    
-    /* Mobile */
-    ${respondBelow.sm`
-        font-size: 35px;
-        -webkit-text-stroke-width: 2px;
-    `}  
-`;
-
 const WelcomeCopyStyled = styled.p`
     color: ${ props => props.theme.colors.secondary };
     padding: 50px;
@@ -71,7 +54,7 @@ function Welcome() {
 
                 <WelcomeTextContentStyled>
 
-                    <WelcomeTitleStyled className="box-title">Welcome to Rabi Ribi!</WelcomeTitleStyled>
+                    <h1 className="box-title">Welcome to Rabi Ribi!</h1>
 
                     <WelcomeCopyStyled>Dodge bullets, missiles and lasers in battle as you wrap your head around that bunny girl costume! 
                         Combo away with your mighty Piko Hammer or spam various spells from afar with your fiery fairy friend. 
