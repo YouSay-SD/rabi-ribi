@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { respondBelow } from '../theme/breakPoints';
 
 const ButtonStyled = styled.a`
     background-image: linear-gradient(-7deg,transparent 50%,rgba(255,177,200,.3) 50%);
@@ -23,9 +22,9 @@ const ButtonStyled = styled.a`
     }
 `;
 
-function Button() {
+function Button(props) {
     return (
-        <ButtonStyled href="www.google.com">Follow</ButtonStyled>
+        <ButtonStyled href={ props.url }>{ props.title }</ButtonStyled>
     )
 }
 
