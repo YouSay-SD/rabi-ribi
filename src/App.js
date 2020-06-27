@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header';
 import Hero from './components/hero';
@@ -11,23 +12,43 @@ import Footer from './components/footer';
 function App() {
   return (
     <>
+      <Router>
 
-      <Header />
-    
-      <Hero />
+        <Header />
 
-      <Video />
+          <Switch>
 
-      <Welcome />
+            <Route exact path="/" render={() => {
+              return (
+                <>
+                  <Hero />
 
-      <Poster />
+                  <Video />
+            
+                  <Welcome />
+            
+                  <Poster />
 
-      <PagesViewer />
+                  <PagesViewer />
+            
+                </>
+              )
 
-      <Footer />
+            }}>
+            </Route>
 
+            <Route path="/characters" render={() => {
+
+
+            }}>
+            </Route>
+
+          </Switch>
+
+        <Footer />
+
+      </Router>
     </>
-
   );
 }
 

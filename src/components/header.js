@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 
@@ -28,6 +29,7 @@ const RabbitLoaderJump = keyframes`
 
 const HeaderStyled = styled.header`
     height: 100vh;
+    top: 0;
     position: fixed;
     z-index: 99;
     font-family: ${ props => props.theme.fontFamily.primary };
@@ -122,6 +124,18 @@ const MenuLeftSideStyled = styled.div`
                         right: 0;
                         opacity: 1;
                     }
+                }
+            }
+
+            .active {
+                padding: 5px 20px;
+                color: ${ props => props.theme.colors.white };
+                -webkit-text-fill-color: ${ props => props.theme.colors.white };
+                -webkit-text-stroke-width: 0;
+
+                &:before {
+                    right: 0;
+                    opacity: 1;
                 }
             }
         }
@@ -246,8 +260,8 @@ function Header() {
 
                     <ul>
 
-                        <li><a href="www.google.com">News</a></li>
-                        <li><a href="www.google.com">Game Data</a></li>
+                        <li><NavLink exact to="/" onClick={ handleToggleClick }>Home</NavLink></li>
+                        <li><NavLink to="/characters" onClick={ handleToggleClick }>Characters</NavLink></li>
                         <li><a href="www.google.com">Maps</a></li>
                         <li><a href="www.google.com">Achievements</a></li>
                         <li><a href="www.google.com">Minigames</a></li>
