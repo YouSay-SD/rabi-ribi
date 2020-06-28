@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
         color: ${ props => props.theme.colors.white };
 
         &::-webkit-scrollbar {
-            width: 12px;
+            width: 12px; 
         }
 
         &::-webkit-scrollbar-thumb {
@@ -108,6 +108,27 @@ const GlobalStyle = createGlobalStyle`
             bottom: -68px;
             right: 0%;
         }
+    }
+
+    /* Rose Wave */
+    .rose-wave {
+        background-color: ${ props => props.theme.colors.secondary };
+        background-image: url('./img/character/frame_wave_top.png'),url('./img/character/frame_wave_bottom.png'),url('./img/character/bg_pad_big.png');
+        background-position: top center,bottom center,center;
+        background-repeat: repeat-x,repeat-x,repeat;
+        -webkit-mask-image: url('./img/character/mask_wave_top.png'),url('./img/character/box.png'),url('./img/character/mask_wave_bottom.png');
+        -webkit-mask-position: top,center,bottom;
+        mask-position: top,center,bottom;
+        -webkit-mask-repeat: repeat-x,repeat-x,repeat-x;
+        mask-repeat: repeat-x,repeat-x,repeat-x;
+        -webkit-mask-size: auto,100% calc(100% - 94px),auto;
+        mask-size: auto,100% calc(100% - 94px),auto;
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     /* Box Title */

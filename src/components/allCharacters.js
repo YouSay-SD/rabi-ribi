@@ -7,32 +7,17 @@ import ChibiCharacter from './chibiCharacter';
 
 const AllCharactersStyled = styled.section`
     position: relative;
-
-    span {
-        background-color: ${ props => props.theme.colors.secondary };
-        background-image: url('./img/character/frame_wave_top.png'),url('./img/character/frame_wave_bottom.png'),url('./img/character/bg_pad_big.png');
-        background-position: top center,bottom center,center;
-        background-repeat: repeat-x,repeat-x,repeat;
-        -webkit-mask-image: url('./img/character/mask_wave_top.png'),url('./img/character/box.png'),url('./img/character/mask_wave_bottom.png');
-        -webkit-mask-position: top,center,bottom;
-        mask-position: top,center,bottom;
-        -webkit-mask-repeat: repeat-x,repeat-x,repeat-x;
-        mask-repeat: repeat-x,repeat-x,repeat-x;
-        -webkit-mask-size: auto,100% calc(100% - 94px),auto;
-        mask-size: auto,100% calc(100% - 94px),auto;
-        width: 100%;
-        height: 400px;
-        position: absolute;
-        z-index: -1;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 `;
 
 const AllCharactersTitleStyled = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+
+    /* Mobile */
+    ${respondBelow.sm`
+        margin-bottom: 20px;
+    `}
     
     h2 {
         &:after {
@@ -68,7 +53,37 @@ const ChibiCharactersSliderStyled = styled.div`
 `;
 
 const CharactersSliderStyled = styled.div`
-    
+    position: relative;
+
+    .rose-wave {
+        /* Mobile */
+        ${respondBelow.sm`
+            top: 0;
+            transform: initial;
+            height: 500px;
+        `}
+    }
+
+    .slick-next {
+        /* Mobile */
+        ${respondBelow.sm`
+            right: -5px;
+        `} 
+    }
+
+    .slick-prev {
+        /* Mobile */
+        ${respondBelow.sm`
+            left: -5px;
+        `} 
+    }
+
+    .slick-arrow {
+        /* Mobile */
+        ${respondBelow.sm`
+            top: 30%;
+        `} 
+    }
 `;
 
 const characterList = [
@@ -288,61 +303,66 @@ function AllCharacters() {
 
         <AllCharactersStyled>
 
-            <div className="container">
+                <div className="container">
 
-                <AllCharactersTitleStyled>
+                    <AllCharactersTitleStyled>
 
-                    <h2 className="box-title">Characters:</h2>
+                        <h2 className="box-title">Characters:</h2>
 
-                </AllCharactersTitleStyled>
+                    </AllCharactersTitleStyled>
 
-                <ChibiCharactersSliderStyled>
+                    <ChibiCharactersSliderStyled>
 
-                    <Slider 
-                        asNavFor={topNav}
-                        ref={slider => {
-                            bottomSlider = slider;
-                        }}
-                        {...settingsTopNav}    
-                    >
+                        <Slider 
+                            asNavFor={topNav}
+                            ref={slider => {
+                                bottomSlider = slider;
+                            }}
+                            {...settingsTopNav}    
+                        >
 
-                        {
-                            chibiCharacterList.map(({ key, img, name }) => {
-                                return (
-                                    <ChibiCharacter key={ key } img={ img } name={ name } />
-                                )
-                            })
-                        }
+                            {
+                                chibiCharacterList.map(({ key, img, name }) => {
+                                    return (
+                                        <ChibiCharacter key={ key } img={ img } name={ name } />
+                                    )
+                                })
+                            }
 
-                    </Slider>
+                        </Slider>
 
-                </ChibiCharactersSliderStyled>
+                    </ChibiCharactersSliderStyled>
+
+                </div>
 
                 <CharactersSliderStyled>
 
-                    <Slider
-                        asNavFor={bottomNav}
-                        ref={slider => {
-                            topSlider = slider;
-                        }} 
-                        fade={true}                   
-                    >
+                    <div className="container">
 
-                        {
-                            characterList.map(({ key, name, img, description }) => {
-                                return (
-                                    <Character key={ key } name={ name } img={ img } description={ description } />
-                                )
-                            })
-                        }
-                        
-                    </Slider>
+                        <Slider
+                            asNavFor={bottomNav}
+                            ref={slider => {
+                                topSlider = slider;
+                            }} 
+                            fade={true}                   
+                        >
+
+                            {
+                                characterList.map(({ key, name, img, description }) => {
+                                    return (
+                                        <Character key={ key } name={ name } img={ img } description={ description } />
+                                    )
+                                })
+                            }
+                            
+                        </Slider>
+
+                    </div>
+
+                    <span className="rose-wave"></span>
 
                 </CharactersSliderStyled>
 
-            </div>
-
-            <span></span>
         </AllCharactersStyled>
 
 
