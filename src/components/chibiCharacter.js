@@ -17,10 +17,10 @@ const ChibiCharacterStyled = styled.div`
 `;
 
 
-function ChibiCharacter({ key, img, name }) {
+function ChibiCharacter({ img, name }) {
     return (
 
-        <ChibiCharacterStyled key={ key }>
+        <ChibiCharacterStyled>
 
             <img src={ img } alt={ name } />
 

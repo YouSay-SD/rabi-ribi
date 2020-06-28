@@ -109,18 +109,6 @@ const chibiCharacterList = [
 ]
 
 function AllCharacters() {
-    /*
-    const [topNav, setTopNav] = useState(null); 
-    const [bottomNav, setBottomNav] = useState(null);
-
-    let topSlider = [],
-        bottomSlider = [];
-
-    useEffect(() => {
-        setTopNav(topSlider);
-        setBottomNav(bottomSlider);   
-    }, [topSlider, bottomSlider]);
-    */
     
     const settings = {
         dots: true,
@@ -135,7 +123,7 @@ function AllCharacters() {
     
     return (
 
-        <AllCharactersStyled className="">
+        <AllCharactersStyled>
 
             <div className="container">
 
