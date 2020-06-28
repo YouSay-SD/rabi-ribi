@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef }from 'react';
 import styled from 'styled-components';
-import { respondBelow } from '../theme/breakPoints';
+import { respondBelow, breakPoints } from '../theme/breakPoints';
 import Slider from 'react-slick';
 import Character from './character';
 import ChibiCharacter from './chibiCharacter';
@@ -33,19 +33,42 @@ const AllCharactersTitleStyled = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    
+    h2 {
+        &:after {
+            border: 2px solid ${ props => props.theme.colors.secondary };
+            border-radius: 10px;
+        }
+    }
 `;
 
 const ChibiCharactersSliderStyled = styled.div`
     .slick-current {
         div {
+            outline: none;
+
+            &:focus {
+                outline: none;
+            }
+
             div {
                 background-color: initial;
             }
         }
     }
+
+    .slick-slide {
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    .slick-active {
+        opacity: 1;
+    }
 `;
 
 const CharactersSliderStyled = styled.div`
+    
 `;
 
 const characterList = [
@@ -236,6 +259,30 @@ function AllCharacters() {
         setTopNav(topSlider);
         setBottomNav(bottomSlider);   
     }, [topSlider, bottomSlider]);
+
+    const settingsTopNav = {
+        centerMode: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 9,
+        focusOnSelect: true,
+        swipeToSlide: true,
+        className: 'character-slider',
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 5
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+        ]
+    }
     
     return (
 
@@ -256,10 +303,7 @@ function AllCharacters() {
                         ref={slider => {
                             bottomSlider = slider;
                         }}
-                        slidesToShow={9}
-                        swipeToSlide={true}
-                        focusOnSelect={true}
-                        className='chibi-character-slick'
+                        {...settingsTopNav}    
                     >
 
                         {
@@ -280,8 +324,10 @@ function AllCharacters() {
                         asNavFor={bottomNav}
                         ref={slider => {
                             topSlider = slider;
-                        }}                    
+                        }} 
+                        fade={true}                   
                     >
+
                         {
                             characterList.map(({ key, name, img, description }) => {
                                 return (
@@ -289,6 +335,7 @@ function AllCharacters() {
                                 )
                             })
                         }
+                        
                     </Slider>
 
                 </CharactersSliderStyled>
