@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 import Slider from 'react-slick';
 import Character from './character';
+import ChibiCharacter from './chibiCharacter';
 
 const AllCharactersStyled = styled.section`
     position: relative;
@@ -39,25 +40,13 @@ const AllCharactersSliderStyled = styled.div`
     justify-content: center;
 `;
 
-const ChibiCharacter = styled.div`
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: ${ props => props.theme.colors.secondary };
-    margin: 0 10px;
-
-    img {
-        width: 100%;
-    }
-`;
-
 const CharactersSliderStyled = styled.div`
 
 `;
 
 const characterList = [
     {
+        key: 1,
         name: 'Erina',
         img: './img/character/graphic_erina_1.png',
         description: `Erina is the main protagonist and only known bunny on Rabi Rabi Island. She has been transformed into a human for unknown reasons.
@@ -68,6 +57,7 @@ const characterList = [
         Erina is six months old as a bunny or about 15-16 years old as a human.`
     },
     {
+        key: 2,
         name: 'Ribbon',
         img: './img/character/graphic_ribbon_1.png',
         description: `Ribbon is a fairy that Erina runs into as she is trying to help her friends, Pixie and Lili.
@@ -77,28 +67,49 @@ const characterList = [
         Being the youngest in her group of friends, she earned the nickname of “Ribi”. Only her fairy friends are allowed to use that name, though.`
     },
     {
+        key: 3,
         name: 'Ashuri',
         img: './img/character/graphic_ashuri_1.png',
         description: `Ashuri is a magic user obsessed with research. Upon meeting Erina for the first time, all she wants to do is study her.
         Although she likes teasing Ribbon a lot, she is very dependable. She's also one of Rumi's close friends.
         When Ashuri and Erina met a second time, the sky bunny phenomenon happened. She was silly enough to think that it would not affect her as "there were no bunnies around".`
+    },
+    {
+        key: 4,
+        name: 'Pandora',
+        img: './img/character/graphic_pandora_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
     }
 ]
 
 const chibiCharacterList = [
     {
-        img: './img/character-chibi/erina.png'
+        key: 1,
+        img: './img/character-chibi/erina.png',
+        name: 'Erina'
     },
     {
-        img: './img/character-chibi/ribbon.png'
+        key: 2,
+        img: './img/character-chibi/ribbon.png',
+        name: 'Ribbon'
     },
     {
-        img: './img/character-chibi/ashuri.png'
+        key: 3,
+        img: './img/character-chibi/ashuri.png',
+        name: 'Ashuri'
+    },
+    {
+        key: 4,
+        img: './img/character-chibi/pandora.png',
+        name: 'Pandora'
     }
 ]
 
 function AllCharacters() {
-
+    /*
     const [topNav, setTopNav] = useState(null); 
     const [bottomNav, setBottomNav] = useState(null);
 
@@ -109,6 +120,7 @@ function AllCharacters() {
         setTopNav(topSlider);
         setBottomNav(bottomSlider);   
     }, [topSlider, bottomSlider]);
+    */
     
     const settings = {
         dots: true,
@@ -120,7 +132,7 @@ function AllCharacters() {
         slidesToScroll: 1,
         className: 'character-slider'
     }
-
+    
     return (
 
         <AllCharactersStyled className="">
@@ -135,59 +147,13 @@ function AllCharacters() {
 
                 <AllCharactersSliderStyled>
 
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
-
-                    <ChibiCharacter>
-
-                        <img src="./img/character-chibi/erina.png" alt="name"/>
-
-                    </ChibiCharacter>
+                    {
+                        chibiCharacterList.map(({ key, img, name }) => {
+                            return (
+                                <ChibiCharacter key={ key } img={ img } name={ name } />
+                            )
+                        })
+                    }
 
                 </AllCharactersSliderStyled>
 
@@ -196,9 +162,9 @@ function AllCharacters() {
                     <Slider {...settings}>
 
                         {
-                            characterList.map(({ name, img, description }) => {
+                            characterList.map(({ key, name, img, description }) => {
                                 return (
-                                    <Character name={ name } img={ img } description={ description } />
+                                    <Character key={ key } name={ name } img={ img } description={ description } />
                                 )
                             })
                         }
