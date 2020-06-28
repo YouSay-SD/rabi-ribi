@@ -9,6 +9,8 @@ import Poster from './components/poster';
 import PagesViewer from './components/pagesViewer';
 import AllCharacters from './components/allCharacters';
 import Footer from './components/footer';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
