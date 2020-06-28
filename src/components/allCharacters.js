@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef }from 'react';
 import styled from 'styled-components';
 import { respondBelow } from '../theme/breakPoints';
 import Slider from 'react-slick';
@@ -35,13 +35,17 @@ const AllCharactersTitleStyled = styled.div`
     margin-bottom: 40px;
 `;
 
-const AllCharactersSliderStyled = styled.div`
-    display: flex;
-    justify-content: center;
+const ChibiCharactersSliderStyled = styled.div`
+    .slick-current {
+        div {
+            div {
+                background-color: initial;
+            }
+        }
+    }
 `;
 
 const CharactersSliderStyled = styled.div`
-
 `;
 
 const characterList = [
@@ -82,6 +86,78 @@ const characterList = [
         Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
         Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
         Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 5,
+        name: 'Rita',
+        img: './img/character/graphic_rita_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 6,
+        name: 'Saya',
+        img: './img/character/graphic_saya_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 7,
+        name: 'Cocoa',
+        img: './img/character/graphic_cocoa_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 8,
+        name: 'Rumi',
+        img: './img/character/graphic_rumi_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 9,
+        name: 'Miru',
+        img: './img/character/graphic_miru_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 10,
+        name: 'Miriam',
+        img: './img/character/graphic_miriam_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 11,
+        name: 'Kotri',
+        img: './img/character/graphic_kotri_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
+    },
+    {
+        key: 12,
+        name: 'Irisu',
+        img: './img/character/graphic_irisu_1.png',
+        description: `Pandora is the protector of the Pyramids and has been around for hundreds of years.
+        Due to recent events and the disturbance in the undergrounds, her pyramid rose up to the sruface after being buried down for hundreds of years. She gets angry when it becomes filled with tourists roaming all around the place.
+        Demands to be called Princess Pandora even though she is not actually a princess. She thinks Erina is Rumi's slave because she cannot tell the difference between a pet and a slave.
+        Once she gets to Rabi Rabi Town, she quickly becomes friends with Kotri. She even asks Kotri to teach her dancing so she could feel a little more like a princess.`
     }
 ]
 
@@ -105,21 +181,61 @@ const chibiCharacterList = [
         key: 4,
         img: './img/character-chibi/pandora.png',
         name: 'Pandora'
+    },
+    {
+        key: 5,
+        img: './img/character-chibi/rita.png',
+        name: 'Rita'
+    },
+    {
+        key: 6,
+        img: './img/character-chibi/saya.png',
+        name: 'Saya'
+    },
+    {
+        key: 7,
+        img: './img/character-chibi/cocoa.png',
+        name: 'Cocoa'
+    },
+    {
+        key: 8,
+        img: './img/character-chibi/rumi.png',
+        name: 'Rumi'
+    },
+    {
+        key: 9,
+        img: './img/character-chibi/miru.png',
+        name: 'Miru'
+    },
+    {
+        key: 10,
+        img: './img/character-chibi/miriam.png',
+        name: 'Miriam'
+    },
+    {
+        key: 11,
+        img: './img/character-chibi/Kotri.png',
+        name: 'Kotri'
+    },
+    {
+        key: 12,
+        img: './img/character-chibi/irisu.png',
+        name: 'Irisu'
     }
 ]
 
 function AllCharacters() {
-    
-    const settings = {
-        dots: true,
-        fade: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        arrows: true,
-        slidesToScroll: 1,
-        className: 'character-slider'
-    }
+
+    const [topNav, setTopNav] = useState(null); 
+    const [bottomNav, setBottomNav] = useState(null);
+
+    let topSlider = [],
+        bottomSlider = [];
+
+    useEffect(() => {
+        setTopNav(topSlider);
+        setBottomNav(bottomSlider);   
+    }, [topSlider, bottomSlider]);
     
     return (
 
@@ -133,22 +249,39 @@ function AllCharacters() {
 
                 </AllCharactersTitleStyled>
 
-                <AllCharactersSliderStyled>
+                <ChibiCharactersSliderStyled>
 
-                    {
-                        chibiCharacterList.map(({ key, img, name }) => {
-                            return (
-                                <ChibiCharacter key={ key } img={ img } name={ name } />
-                            )
-                        })
-                    }
+                    <Slider 
+                        asNavFor={topNav}
+                        ref={slider => {
+                            bottomSlider = slider;
+                        }}
+                        slidesToShow={9}
+                        swipeToSlide={true}
+                        focusOnSelect={true}
+                        className='chibi-character-slick'
+                    >
 
-                </AllCharactersSliderStyled>
+                        {
+                            chibiCharacterList.map(({ key, img, name }) => {
+                                return (
+                                    <ChibiCharacter key={ key } img={ img } name={ name } />
+                                )
+                            })
+                        }
+
+                    </Slider>
+
+                </ChibiCharactersSliderStyled>
 
                 <CharactersSliderStyled>
 
-                    <Slider {...settings}>
-
+                    <Slider
+                        asNavFor={bottomNav}
+                        ref={slider => {
+                            topSlider = slider;
+                        }}                    
+                    >
                         {
                             characterList.map(({ key, name, img, description }) => {
                                 return (
@@ -156,7 +289,6 @@ function AllCharacters() {
                                 )
                             })
                         }
-
                     </Slider>
 
                 </CharactersSliderStyled>

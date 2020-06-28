@@ -8,7 +8,12 @@ const ChibiCharacterStyled = styled.div`
     border-radius: 50%;
     overflow: hidden;
     background-color: ${ props => props.theme.colors.secondary };
-    margin: 0 10px;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: initial;
+    }
 
     img {
         width: 80px;
