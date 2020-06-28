@@ -7,6 +7,7 @@ import Video from './components/video';
 import Welcome from './components/welcome';
 import Poster from './components/poster';
 import PagesViewer from './components/pagesViewer';
+import AllCharacters from './components/allCharacters';
 import Footer from './components/footer';
 
 function App() {
@@ -33,13 +34,15 @@ function App() {
             
                 </>
               )
-
             }}>
             </Route>
 
             <Route path="/characters" render={() => {
-
-
+              return (
+                
+                  <AllCharacters />
+                
+              )
             }}>
             </Route>
 

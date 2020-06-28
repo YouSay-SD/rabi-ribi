@@ -87,7 +87,7 @@ const MenuLeftSideStyled = styled.div`
                 text-decoration: none;
                 font-size: 34px;
                 color: ${ props => props.theme.colors.primary };
-                font-weight: ${ props => props.theme.fontWeigth.bold };
+                font-weight: ${ props => props.theme.fontWeight.bold };
                 padding: 5px 20px;
                 -webkit-text-fill-color: ${ props => props.theme.colors.white };
                 -webkit-text-stroke-width: 1px;

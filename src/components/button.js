@@ -13,7 +13,7 @@ const ButtonStyled = styled.a`
     box-shadow: 0 2px 0 0 rgba(255,108,135,.2);
     border-radius: 5rem;
     font-size: 18px;
-    font-weight: ${ props => props.theme.fontWeigth.bold };
+    font-weight: ${ props => props.theme.fontWeight.bold };
     font-family: ${ props => props.theme.fontFamily.secondary };
 
     &:hover {
