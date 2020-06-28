@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-size: 50px;
-        font-weight: ${ props => props.theme.fontWeigth.bold };
+        font-weight: ${ props => props.theme.fontWeight.bold };
         text-align: center;
         padding: 10px 20px;
         margin-bottom: 40px;
@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h2 {
-        font-weight: ${ props => props.theme.fontWeigth.bold };
+        font-weight: ${ props => props.theme.fontWeight.bold };
         text-align: center;
         padding: 10px 60px;
         color: ${ props => props.theme.colors.secondary };
@@ -67,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h3 {
-        font-weight: ${ props => props.theme.fontWeigth.bold };
+        font-weight: ${ props => props.theme.fontWeight.bold };
         font-size: 20px;
         text-align: center;
         padding: 7px 0;

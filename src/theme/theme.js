@@ -22,7 +22,7 @@ export default {
         secondary: 'Comic Neue'
     },
     // Font Weight 
-    fontWeigth: {
+    fontWeight: {
         light: 300,
         regular: 400,
         medium: 500,
