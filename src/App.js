@@ -2,11 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header';
-import Hero from './components/hero';
+import MainHero from './components/mainHero';
 import Video from './components/video';
 import Welcome from './components/welcome';
 import Poster from './components/poster';
 import PagesViewer from './components/pagesViewer';
+import Hero from './components/hero';
 import AllCharacters from './components/allCharacters';
 import Footer from './components/footer';
 import "slick-carousel/slick/slick.css";
@@ -24,7 +25,7 @@ function App() {
             <Route exact path="/" render={() => {
               return (
                 <>
-                  <Hero />
+                  <MainHero />
 
                   <Video />
             
@@ -41,9 +42,11 @@ function App() {
 
             <Route path="/characters" render={() => {
               return (
+                <>
+                  <Hero />
                 
                   <AllCharacters />
-                
+                </>
               )
             }}>
             </Route>

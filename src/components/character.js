@@ -23,8 +23,8 @@ const CharacterTextStyled = styled.div`
 
     h4 {
         display: block;
-        margin-bottom: 30px;
-        border-bottom: 1px solid white;
+        margin-bottom: 20px;
+        border-bottom: 1px solid ${ props => props.theme.colors.white };
         padding: 10px 0;
 
         /* Mobile */
@@ -41,7 +41,7 @@ const CharacterTextStyled = styled.div`
 
         /* Tablet */
         ${respondBelow.md`
-            font-size: 13px; 
+            font-size: 14px; 
         `}
 
         /* Mobile */

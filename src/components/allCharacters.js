@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef }from 'react';
+import React, { useState, useEffect }from 'react';
 import styled from 'styled-components';
-import { respondBelow, breakPoints } from '../theme/breakPoints';
+import { respondBelow } from '../theme/breakPoints';
 import Slider from 'react-slick';
 import Character from './character';
 import ChibiCharacter from './chibiCharacter';
 
 const AllCharactersStyled = styled.section`
     position: relative;
+    padding: 0;
 `;
 
 const AllCharactersTitleStyled = styled.div`
@@ -53,16 +54,7 @@ const ChibiCharactersSliderStyled = styled.div`
 `;
 
 const CharactersSliderStyled = styled.div`
-    position: relative;
-
-    .rose-wave {
-        /* Mobile */
-        ${respondBelow.sm`
-            top: 0;
-            transform: initial;
-            height: 500px;
-        `}
-    }
+    position: relative; 
 
     .slick-next {
         /* Mobile */

@@ -64,6 +64,13 @@ const GlobalStyle = createGlobalStyle`
         color: ${ props => props.theme.colors.secondary };
         -webkit-text-fill-color: ${ props => props.theme.colors.white };
         -webkit-text-stroke-width: 1.5px;
+
+        /* Mobile */
+        ${respondBelow.sm`
+            font-size: 22px;
+            padding: 10px 20px;
+            -webkit-text-stroke-width: 1px;
+        `} 
     }
 
     h3 {
@@ -110,6 +117,22 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    /* Cloud Bottom */
+    .cloud-bottom {
+        /* Cloud Bottom */
+        &:after {
+            content: '';
+            background-image: url('./img/background/frame-cloud-bottom.png');
+            background-position: center bottom;
+            background-repeat: repeat-x;
+            position: absolute;
+            width: 100%;
+            height: 68px;
+            bottom: -68px;
+            right: 0%;
+        }
+    }
+
     /* Rose Wave */
     .rose-wave {
         background-color: ${ props => props.theme.colors.secondary };
@@ -129,6 +152,13 @@ const GlobalStyle = createGlobalStyle`
         z-index: -1;
         top: 50%;
         transform: translateY(-50%);
+
+        /* Mobile */
+        ${respondBelow.sm`
+            top: 0;
+            transform: initial;
+            height: 440px;
+        `} 
     }
 
     /* Box Title */
