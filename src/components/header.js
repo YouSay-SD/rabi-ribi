@@ -262,7 +262,7 @@ function Header() {
 
                         <li><NavLink exact to="/" onClick={ handleToggleClick }>Home</NavLink></li>
                         <li><NavLink to="/characters" onClick={ handleToggleClick }>Characters</NavLink></li>
-                        <li><a href="www.google.com">Maps</a></li>
+                        <li><NavLink to="/game-data" onClick={ handleToggleClick }>Game Data</NavLink></li>
                         <li><a href="www.google.com">Achievements</a></li>
                         <li><a href="www.google.com">Minigames</a></li>
                         <li><a href="www.google.com">About</a></li>

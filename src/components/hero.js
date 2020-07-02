@@ -34,14 +34,14 @@ const HeroStyled = styled.div`
     }
 `;
 
-function Hero() {
+function Hero(props) {
     return (
 
         <HeroStyled className="cloud-bottom">
 
             <div></div>
 
-            <img src="./img/hero/12.png" alt="hero" />
+            <img src={ props.img } alt="Hero" />
 
         </HeroStyled>
 

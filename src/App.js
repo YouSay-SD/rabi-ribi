@@ -9,6 +9,7 @@ import Poster from './components/poster';
 import PagesViewer from './components/pagesViewer';
 import Hero from './components/hero';
 import AllCharacters from './components/allCharacters';
+import ItemList from './components/itemList';
 import Footer from './components/footer';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,9 +44,21 @@ function App() {
             <Route path="/characters" render={() => {
               return (
                 <>
-                  <Hero />
+                  <Hero img="./img/hero/12.png" />
                 
                   <AllCharacters />
+                </>
+              )
+            }}>
+            </Route>
+
+            <Route path="/game-data" render={() => {
+              return (
+                <>
+                  <Hero img="./img/hero/2.png" />
+
+                  <ItemList />
+                  
                 </>
               )
             }}>
