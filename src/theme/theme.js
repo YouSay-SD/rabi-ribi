@@ -7,7 +7,16 @@ export default {
         black: '#000000',
         white: '#ffffff',
         grey: '#f0f0f0',
-        rose: '#ffb1c8'
+        rose: '#ffb1c8',
+        purple: '#564989',
+        darkPurple: '#252442',
+        red: '#A75E6A',
+        darkRed: '#492C31',
+        lightRed: '#FFAFCB',
+        green: '#7CA049',
+        darkGreen: '#323F1E',
+        blue: '#437CA7',
+        darkBlue: '#1B3749'
     },
     // Colors RGB
     colorsRGB: {
