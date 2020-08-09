@@ -13,6 +13,8 @@ import ItemList from './components/itemList';
 import Footer from './components/footer';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'animate.css';
+
 
 function App() {
   return (

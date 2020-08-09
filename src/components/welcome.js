@@ -54,7 +54,7 @@ function Welcome() {
 
                 <WelcomeTextContentStyled>
 
-                    <h1 className="box-title animate_animated animate__fadeInDown">Welcome to Rabi Ribi!</h1>
+                    <h1 className="box-title animate__animated animate__fadeInDown">Welcome to Rabi Ribi!</h1>
 
                     <WelcomeCopyStyled>Dodge bullets, missiles and lasers in battle as you wrap your head around that bunny girl costume! 
                         Combo away with your mighty Piko Hammer or spam various spells from afar with your fiery fairy friend. 
