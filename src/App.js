@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/header';
+import Header from './components/ui/Header';
 import MainHero from './components/mainHero';
 import Video from './components/video';
 import Welcome from './components/welcome';

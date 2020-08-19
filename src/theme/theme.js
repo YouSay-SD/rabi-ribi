@@ -16,19 +16,19 @@ export default {
         green: '#7CA049',
         darkGreen: '#323F1E',
         blue: '#437CA7',
-        darkBlue: '#1B3749'
+        darkBlue: '#1B3749',
     },
     // Colors RGB
     colorsRGB: {
         primary: '138,86,187',
         secondary: '255,108,135',
         white: '255,255,255',
-        rose: '255,177,200'
+        rose: '255,177,200',
     },
     // Font Family
     fontFamily: {
         primary: 'Rammetto One, cursive',
-        secondary: 'Comic Neue'
+        secondary: 'Comic Neue',
     },
     // Font Weight 
     fontWeight: {
@@ -37,6 +37,6 @@ export default {
         medium: 500,
         demi: 600,
         bold: 700,
-        heavy: 800
+        heavy: 800,
     },
 }

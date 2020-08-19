@@ -40,9 +40,8 @@ export const Navbar = () => {
 
         <li><NavLink exact to="/">Home</NavLink></li>
         <li><NavLink exact to="/characters">Characters</NavLink></li>
-        <li><NavLink exact to="/game-data">Game Data</NavLink></li>
-        <li><a href="www.google.com">Achievements</a></li>
-        <li><a href="www.google.com">Minigames</a></li>
+        <li><NavLink exact to="/game-data">Data Base</NavLink></li>
+        <li><a href="www.google.com">Game</a></li>
         <li><a href="www.google.com">About</a></li>
 
       </ul>
