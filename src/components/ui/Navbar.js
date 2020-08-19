@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
-import { respondBelow } from '../theme/breakPoints';
+import styled from 'styled-components';
 
 const NavStyled = styled.nav`
-    transform: rotate(-1.5deg) translate(35px, 16px);
-    -webkit-transform: rotate(-1.5deg) translate(35px, 16px);
+  transform: rotate(-1.5deg) translate(35px, 16px);
+  -webkit-transform: rotate(-1.5deg) translate(35px, 16px);
 
   ul {
     list-style: none;
@@ -28,9 +27,7 @@ const NavStyled = styled.nav`
       }
     }
   }
-
 `;
-
 
 export const Navbar = () => {
   return (
@@ -41,8 +38,8 @@ export const Navbar = () => {
         <li><NavLink exact to="/">Home</NavLink></li>
         <li><NavLink exact to="/characters">Characters</NavLink></li>
         <li><NavLink exact to="/game-data">Data Base</NavLink></li>
-        <li><a href="www.google.com">Game</a></li>
-        <li><a href="www.google.com">About</a></li>
+        <li><NavLink exact to="/game-data">Game</NavLink></li>
+        <li><NavLink exact to="/game-data">About</NavLink></li>
 
       </ul>
 

@@ -1,8 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { respondBelow } from '../../theme/breakPoints';
-import { Navbar } from '../Navbar';
+import { Navbar } from './Navbar';
 
 const HeaderStyled = styled.header`
     width: 100%;
